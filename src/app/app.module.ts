@@ -12,6 +12,7 @@ import { AuthComponent } from './layouts/auth/auth.component';
 import { SignupComponent } from './pages/auth/signup/signup.component';
 import { HomeOneComponent } from './candeactivate/home-one/home-one.component';
 import { FormComponent } from './candeactivate/form/form.component';
+import { UserContactComponent } from './can-match/user-contact/user-contact.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { FormComponent } from './candeactivate/form/form.component';
     SignupComponent,
     HomeOneComponent,
     FormComponent,
+    UserContactComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],

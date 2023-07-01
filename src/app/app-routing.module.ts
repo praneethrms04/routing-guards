@@ -10,6 +10,7 @@ import { AuthComponent } from './layouts/auth/auth.component';
 import { HomeOneComponent } from './candeactivate/home-one/home-one.component';
 import { FormComponent } from './candeactivate/form/form.component';
 import { formDeatcivateGuard } from './candeactivate/form-deatcivate.guard';
+import { rolemanagerGuard } from './can-match/rolemanager.guard';
 
 const routes: Routes = [
   {
@@ -37,6 +38,7 @@ const routes: Routes = [
       },
     ],
   },
+
   {
     path: 'admin',
     component: AdminComponent,
@@ -73,6 +75,22 @@ const routes: Routes = [
     component: FormComponent,
     canDeactivate: [formDeatcivateGuard],
   },
+  {
+    path: 'contact',
+    canMatch : [rolemanagerGuard],
+    loadChildren: () =>
+      import('./can-match/engineer-contact/engineer-contact.module').then(
+        (m) => m.EngineerContactModule
+      ),
+  },
+  {
+    path: 'contact',
+    loadChildren: () =>
+      import('./can-match/user-contact/user-contact.module').then(
+        (m) => m.UserContactModule
+      ),
+  },
+
 ];
 
 @NgModule({
